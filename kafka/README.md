@@ -60,8 +60,6 @@ now, we're gonna execute bash into the kafka container, so we can access kafka's
 
 by getting the output of *docker ps* command, you found the kafka server's container ID. next step is (from any directory) using `$ docker exec -it YourKafkacontainerID bash` command, obtain access to the inside of our Kafka Container. in order to send messages and listen to them at the same time, you must repeat the same command in two different terminals! (by my example, the command would be docker exec -it 8ca68d16a24e bash)
 
-
-
 now that you got two amazing :ghost: terminals accessing the kafka server, let's create a topic.
 
 from inside your cluster, navigate to kafka folder by typing `$ cd opt/bitnami/kafka/`. now, if you type `$ ls`, you'll be able to see the kafka files! these are the files you get if you natively install Kafka on your machine. the executable files (scripts) are inside the */bin* folder, just like any unix-based system.
@@ -73,7 +71,7 @@ kafka files:
 
 # image
 
-now, we have to create one topic. this topic is the "bucket" to where the messages will be sent, from where they can be listened, and eventually (or not, depending on the retaining policy config you set) it will be emptied.
+now, we have to create one topic. this topic is the "bucket" to where the messages will be sent, from where they can be listened, but eventually (or not, depending on the retaining policy config you set) it will be emptied.
 
 use this command to create a topic named **cats**:
 ```
@@ -86,4 +84,15 @@ $ ./bin/kafka-topics.sh  --create --bootstrap-server localhost:9093 --topic cats
 
 ## Are you listening ?
 
-now we set an ear to LIVE listen the messages, before screaming out loud.from this same terminal
+now we set an ear to LIVE listen the messages, before screaming out loud. from this same terminal, enter the command 
+```
+$ ./bin/kafka-console-consumer.sh \
+    --bootstrap-server localhost:9093 \
+    --topic cats \
+    --from-beginning
+```
+
+a total silence takes over the room. the terminal will keep busy, no response means you **got it**. keep the window aside, waiting, and move to the other terminal, where the container bash is still standing after that other *docker run* command.
+
+## Raise your voice
+
