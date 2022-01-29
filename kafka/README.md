@@ -37,7 +37,7 @@
 
 ### kafdrop:
   ```
-  - KAFKA_BROKERCONNECT: "PLAINTEXT://kafka-server:9092"
+     - KAFKA_BROKERCONNECT: "PLAINTEXT://kafka-server:9092"
    ```
    *Has to be connected to all brokers individually to show its topics and values. If more than one broker is set, config pattern is "host:port,host:port"*
 
@@ -46,8 +46,8 @@
 # Docker
 ## Starting the containers
 
-from inside the project folder, type on terminal ` $ docker-compose up`, so the environments can be built. 
-then, type `$ docker ps` to list all running process. if it all went well, you must see 3 lines, corresponding to the 3 services we've set on the yml file. similarly to this:
+from inside the project folder (same directory where docker-compose.yml is), type on terminal ` $ docker-compose up`, so the environment can be brought up. 
+then, type `$ docker ps` to list all running process. if it all went well, you must see 3 lines, corresponding to the 3 services we've set on the yml file (zookeeper, kafka and kafdrop). **similarly** to this:
 
 
 | CONTAINER ID | IMAGE                    | COMMAND                | CREATED            | STATUS            | PORTS                                                                   | NAMES                    |
@@ -56,10 +56,10 @@ then, type `$ docker ps` to list all running process. if it all went well, you m
 | 8ca68d16a24e | bitnami/kafka:2          | "/opt/bitnami/script…" | About a minute ago | Up About a minute | 0.0.0.0:9092-9093->9092-9093/tcp, :::9092-9093->9092-9093/tcp           | kafka_kafka-server_1     |
 | 123040c85f6c | bitnami/zookeeper:3      | "/opt/bitnami/script…" | About a minute ago | Up About a minute | 2888/tcp, 3888/tcp, 0.0.0.0:2181->2181/tcp, :::2181->2181/tcp, 8080/tcp | kafka_zookeeper-server_1 |
 
-now, we're gonna execute bash into the kafka container, so we can send some messages to our cluster. and at the same time, we we'll be listening to the messages. 
+now, we're gonna execute bash into the kafka container, so we can access kafka's scripts and send some messages to our cluster. at the same time, we we'll be listening to these messages.
 
-by getting the output of *docker ps* command, you will find the kafka server's container ID. next step is (from any directory) using `docker exec -it YourKafkacontainerID bash` command, obtain access to inside the Kafka Container. in order to send messages and listen to them at the same time, you must repeat the same command from two different terminals! 
+by getting the output of *docker ps* command, you found the kafka server's container ID. next step is (from any directory) using `docker exec -it YourKafkacontainerID bash` command, obtain access to the inside of our Kafka Container. in order to send messages and listen to them at the same time, you must repeat the same command in two different terminals! (by my example, the command would be docker exec -it 8ca68d16a24e bash)
 
 ## Are you listening ?
 
-now that you got two amazing terminals accessing the kafka server
+now that you got two amazing :ghost: terminals accessing the kafka server, let's set an ear to LIVE listen the messages, before screaming out loud.
