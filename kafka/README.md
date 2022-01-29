@@ -7,13 +7,14 @@
 
 
 # about our configs (yml)
-- the ports statement exposes the container’s port xxxx on the host’s port yyyy (example):
+### ports
+  the ports statement exposes the container’s port xxxx on the host’s port yyyy (example):
     ```
      ports:
      - "yyyy:xxxx" (thus, my local port yyyy will be able to access the xxxx container's port)
     ```
 
-- kafka container:
+### kafka container:
   ```
     - ALLOW_PLAINTEXT_LISTENER=yes
     - KAFKA_LISTENER_SECURITY_PROTOCOL_MAP= CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT     
@@ -34,7 +35,7 @@
     ```
   *In a multi-node (production) environment, you must set the KAFKA_ADVERTISED_LISTENERS property in your Dockerfile to the external host/IP address. Otherwise, by default, clients will attempt to connect to the internal host address.*
 
-- kafdrop:
+### kafdrop:
     ```
   - KAFKA_BROKERCONNECT: "PLAINTEXT://kafka-server:9092"
     ```
