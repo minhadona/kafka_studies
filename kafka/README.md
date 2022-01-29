@@ -65,3 +65,5 @@ by getting the output of *docker ps* command, you found the kafka server's conta
 now that you got two amazing :ghost: terminals accessing the kafka server, let's set an ear to LIVE listen the messages, before screaming out loud.
 
 from inside your cluster, navigate to kafka folder by typing `$ cd opt/bitnami/kafka/`. now, if you type `$ ls`, you'll be able to see the kafka files! these are the files you get if you natively install Kafka on your machine. the executable files (scripts) are inside the */bin* folder, just like any unix-based system.
+
+![image.png](./image.png)
