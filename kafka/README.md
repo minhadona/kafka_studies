@@ -66,4 +66,22 @@ now that you got two amazing :ghost: terminals accessing the kafka server, let's
 
 from inside your cluster, navigate to kafka folder by typing `$ cd opt/bitnami/kafka/`. now, if you type `$ ls`, you'll be able to see the kafka files! these are the files you get if you natively install Kafka on your machine. the executable files (scripts) are inside the */bin* folder, just like any unix-based system.
 
-![image.png](./image.png)
+system files, after executing bash:
+# image
+
+kafka files:
+
+# image
+
+now, we have to create one topic. this topic is the "bucket" to where the messages will be sent, from where they can be listened, and eventually (or not, depending on the retaining policy config you set) it will be emptied.
+
+use this command to create a topic named **cats**:
+```
+$ ./bin/kafka-topics.sh  --create --bootstrap-server localhost:9093 --topic cats
+```
+- ./ is used to execute a shell script    
+- kafka-topics.sh is one of the native shell scripts inside kafka files (that can be used for a bunch of things)
+- bootstrap-server's parameter is the kafka broker address, where the topic will be created. it has to be externally reachable if you are contacting the broker from out of this container, that's why we used localhost:9093 and not kafka-server:9092. but, since we're interacting from inside the broker specifically now, the command will work with both addresses. give it a try :)
+
+
+
