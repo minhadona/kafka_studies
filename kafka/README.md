@@ -58,8 +58,10 @@ then, type `$ docker ps` to list all running process. if it all went well, you m
 
 now, we're gonna execute bash into the kafka container, so we can access kafka's scripts and send some messages to our cluster. at the same time, we we'll be listening to these messages.
 
-by getting the output of *docker ps* command, you found the kafka server's container ID. next step is (from any directory) using `docker exec -it YourKafkacontainerID bash` command, obtain access to the inside of our Kafka Container. in order to send messages and listen to them at the same time, you must repeat the same command in two different terminals! (by my example, the command would be docker exec -it 8ca68d16a24e bash)
+by getting the output of *docker ps* command, you found the kafka server's container ID. next step is (from any directory) using `$ docker exec -it YourKafkacontainerID bash` command, obtain access to the inside of our Kafka Container. in order to send messages and listen to them at the same time, you must repeat the same command in two different terminals! (by my example, the command would be docker exec -it 8ca68d16a24e bash)
 
 ## Are you listening ?
 
 now that you got two amazing :ghost: terminals accessing the kafka server, let's set an ear to LIVE listen the messages, before screaming out loud.
+
+from inside your cluster, navigate to kafka folder by typing `$ cd opt/bitnami/kafka/`. now, if you type `$ ls`, you'll be able to see the kafka files! these are the files you get if you natively install Kafka on your machine. the executable files (scripts) are inside the */bin* folder, just like any unix-based system.
