@@ -60,9 +60,9 @@ now, we're gonna execute bash into the kafka container, so we can access kafka's
 
 by getting the output of *docker ps* command, you found the kafka server's container ID. next step is (from any directory) using `$ docker exec -it YourKafkacontainerID bash` command, obtain access to the inside of our Kafka Container. in order to send messages and listen to them at the same time, you must repeat the same command in two different terminals! (by my example, the command would be docker exec -it 8ca68d16a24e bash)
 
-## Are you listening ?
 
-now that you got two amazing :ghost: terminals accessing the kafka server, let's set an ear to LIVE listen the messages, before screaming out loud.
+
+now that you got two amazing :ghost: terminals accessing the kafka server, let's create a topic.
 
 from inside your cluster, navigate to kafka folder by typing `$ cd opt/bitnami/kafka/`. now, if you type `$ ls`, you'll be able to see the kafka files! these are the files you get if you natively install Kafka on your machine. the executable files (scripts) are inside the */bin* folder, just like any unix-based system.
 
@@ -81,7 +81,9 @@ $ ./bin/kafka-topics.sh  --create --bootstrap-server localhost:9093 --topic cats
 ```
 - ./ is used to execute a shell script    
 - kafka-topics.sh is one of the native shell scripts inside kafka files (that can be used for a bunch of things)
-- bootstrap-server's parameter is the kafka broker address, where the topic will be created. it has to be externally reachable if you are contacting the broker from out of this container, that's why we used localhost:9093 and not kafka-server:9092. but, since we're interacting from inside the broker specifically now, the command will work with both addresses. give it a try :)
+- bootstrap-server's parameter is the kafka broker address, where the topic will be created. it has to be externally reachable if you are contacting the broker from out of this container, that's why we used localhost:9093 and not kafka-server:9092. but, since we're interacting from inside the broker specifically now, **the command will work with both addresses**. give it a try :)
 
 
+## Are you listening ?
 
+now we set an ear to LIVE listen the messages, before screaming out loud.from this same terminal
