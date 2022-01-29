@@ -43,11 +43,11 @@
 
    Sources: 
    [Kafdrop](https://github.com/obsidiandynamics/kafdrop), [Confluent1](https://docs.confluent.io/platform/current/kafka/multi-node.html#), [Confluent2](https://docs.confluent.io/platform/current/installation/docker/config-reference.html)
-# Commands
-## Docker
+# Docker
+## Starting the containers
 
 from inside the project folder, type on terminal ` $ docker-compose up`, so the environments can be built. 
-then, type `$ docker ps` to list all running process. if it all went well, you must see 3 lines, corresponding to the 3 services we've set on the yml file. as the following:
+then, type `$ docker ps` to list all running process. if it all went well, you must see 3 lines, corresponding to the 3 services we've set on the yml file. similarly to this:
 
 
 | CONTAINER ID | IMAGE                    | COMMAND                | CREATED            | STATUS            | PORTS                                                                   | NAMES                    |
@@ -56,3 +56,10 @@ then, type `$ docker ps` to list all running process. if it all went well, you m
 | 8ca68d16a24e | bitnami/kafka:2          | "/opt/bitnami/script…" | About a minute ago | Up About a minute | 0.0.0.0:9092-9093->9092-9093/tcp, :::9092-9093->9092-9093/tcp           | kafka_kafka-server_1     |
 | 123040c85f6c | bitnami/zookeeper:3      | "/opt/bitnami/script…" | About a minute ago | Up About a minute | 2888/tcp, 3888/tcp, 0.0.0.0:2181->2181/tcp, :::2181->2181/tcp, 8080/tcp | kafka_zookeeper-server_1 |
 
+now, we're gonna execute bash into the kafka container, so we can send some messages to our cluster. and at the same time, we we'll be listening to the messages. 
+
+by getting the output of *docker ps* command, you will find the kafka server's container ID. next step is (from any directory) using `docker exec -it YourKafkacontainerID bash` command, obtain access to inside the Kafka Container. in order to send messages and listen to them at the same time, you must repeat the same command from two different terminals! 
+
+## Are you listening ?
+
+now that you got two amazing terminals accessing the kafka server
