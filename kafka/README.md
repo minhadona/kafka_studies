@@ -14,25 +14,30 @@
     ```
 
 - kafka container:
+  ```
     - ALLOW_PLAINTEXT_LISTENER=yes
     - KAFKA_LISTENER_SECURITY_PROTOCOL_MAP= CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT     
+   ```
   
   *Defines key/value pairs for the security protocol to use, per listener name.*
+```
     - KAFKA_ADVERTISED_LISTENERS= CLIENT://kafka-server:9092,EXTERNAL://localhost:9093
-
+```
   *Describes how the host name that is advertised can be reached by clients. The value is published to ZooKeeper for clients to use. PLAINTEXT means Un-authenticated, non-encrypted channel. Other valid protocol values can be found [here](https://kafka.apache.org/11/javadoc/org/apache/kafka/common/security/auth/SecurityProtocol.html).*
-
+```
     - KAFKA_ZOOKEEPER_CONNECT= zookeeper-server:2181
     - KAFKA_INTER_BROKER_LISTENER_NAME=CLIENT
-    
+```    
   *Defines which listener to use for inter-broker communication.* 
+```
      - KAFKA_LISTENERS= CLIENT://:9092,EXTERNAL://:9093
-  
+```
   *In a multi-node (production) environment, you must set the KAFKA_ADVERTISED_LISTENERS property in your Dockerfile to the external host/IP address. Otherwise, by default, clients will attempt to connect to the internal host address.*
 
 - kafdrop:
+```
   - KAFKA_BROKERCONNECT: "PLAINTEXT://kafka-server:9092"
-  
+```
    *Has to be connected to all brokers individually to show its topics and values. If more than one broker is set, config pattern is "host:port,host:port"*
 
    Sources: 
