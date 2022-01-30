@@ -100,9 +100,16 @@ a total silence takes over the room. the terminal will keep busy, no response me
 
 one topic to hold the messages, a consumer to hear them. now, we can sail some cat names. to produce messages we can also use a native kafka script. 
 ```
-bin/kafka-console-producer.sh \
+$ ./bin/kafka-console-producer.sh \
     --broker-list localhost:9093 \
     --topic cats
 ```
 
-ffff
+no secrets about these parameters. the terminal will keep busy because it will be waiting for your input (or be, the streaming messages):
+
+#image
+
+so you can start typing! 
+
+
+
