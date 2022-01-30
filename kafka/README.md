@@ -100,7 +100,7 @@ it also uses one of the native scripts to listen to topics. same rule about the 
 
 a total silence takes over the room. the terminal will keep busy, no response means you **got it**. 
 
-![image-3.png](./image-3.png)
+![image-3.png](./img/image-3.png)
 
 keep this window aside, waiting, and move to the other terminal, where the container bash is still standing after that *docker run* command.
 
