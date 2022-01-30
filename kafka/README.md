@@ -5,6 +5,9 @@
 - [x] 1 Zookeeper server
 - [x] 1 Kafdrop interface (to observe topics and messages)
 
+# prerequisites 
+- Docker
+
 
 # about our configs (yml)
 ### ports
@@ -121,5 +124,12 @@ so you can start typing! as long you type new messages on producer terminal, the
 
 ![image-6.png](./image-6.png)
 
+# Fast overview
+
+to observe all topics, its partitions, its messages, and other things, you can use Kafdrop interface. Since the containers are still up, and we exposed our port 9000 to interact with the service (on docker-compose.yml file), it's enough going to browser and typing http://localhost:9000/
+
+# image
+
+have fun with the interface! find the *cats* topic, click on *view messages*, select the partition 0 (since we only have this one), and click on *view messages* again. 
 
 
