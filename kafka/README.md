@@ -65,11 +65,12 @@ now that you got two amazing :ghost: terminals accessing the kafka server, let's
 from inside your cluster, navigate to kafka folder by typing `$ cd opt/bitnami/kafka/`. now, if you type `$ ls`, you'll be able to see the kafka files! these are the files you get if you natively install Kafka on your machine. the executable files (scripts) are inside the */bin* folder, just like any unix-based system.
 
 system files, after executing bash:
-# image
+
+![image-1.png](./image-1.png)
 
 kafka files:
 
-# image
+![image-2.png](./image-2.png)
 
 now, we have to create one topic. this topic is the "bucket" to where the messages will be sent, from where they can be listened, but eventually (or not, depending on the retaining policy config you set) it will be emptied.
 
@@ -94,7 +95,12 @@ $ ./bin/kafka-console-consumer.sh \
 
 it also uses one of the native scripts to listen to topics. same rule about the bootstrap-server parameter applies to this script calling. the last parameter is about the messages offset. it refers to the choice of listening the messages from the beginning or from a specific index.
 
-a total silence takes over the room. the terminal will keep busy, no response means you **got it**. keep the window aside, waiting, and move to the other terminal, where the container bash is still standing after that *docker run* command.
+a total silence takes over the room. the terminal will keep busy, no response means you **got it**. 
+
+![image-3.png](./image-3.png)
+
+keep this window aside, waiting, and move to the other terminal, where the container bash is still standing after that *docker run* command.
+
 
 ## Raise your voice
 
@@ -107,9 +113,13 @@ $ ./bin/kafka-console-producer.sh \
 
 no secrets about these parameters. the terminal will keep busy because it will be waiting for your input (or be, the streaming messages):
 
-#image
+![image-4.png](./image-4.png)
 
-so you can start typing! 
+so you can start typing! as long you type new messages on producer terminal, they will automatically be stored on the cats topic and appear on consumer terminal.
+
+![image-5.png](./image-5.png)
+
+![image-6.png](./image-6.png)
 
 
 
