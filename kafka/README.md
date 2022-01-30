@@ -126,10 +126,12 @@ so you can start typing! as long you type new messages on producer terminal, the
 
 # Fast overview
 
-to observe all topics, its partitions, its messages, and other things, you can use Kafdrop interface. since the containers are still up, and we exposed our port 9000 to interact with the service (on docker-compose.yml file), it's enough going to browser and typing http://localhost:9000/
+to observe all topics, its partitions, its messages, and other things, you can use Kafdrop interface. since the containers are still up, and we exposed our port 9000 to interact with the service (on docker-compose.yml file), it's enough going to your browser and typing http://localhost:9000/
+to have access to Kafdrop interface
+        
+          
 
-![image-7.png](./image-7.png)
 
-have fun with the interface! find the *cats* topic, click on *view messages*, select the partition 0 (since we only have this one, and click on *view messages* again. 
+have fun with it! find the *cats* topic, click at the gray *view messages* button, select partition 0 (since we only have this one) and click at the blue *view messages* button: 
 
-
+![image-7.png](./image-7.png)    
