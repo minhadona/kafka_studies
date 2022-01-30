@@ -69,11 +69,11 @@ from inside your cluster, navigate to kafka folder by typing `$ cd opt/bitnami/k
 
 system files, after executing bash:
 
-![image-1.png](./image-1.png)
+![image-1.png](./img/image-1.png)
 
 kafka files:
 
-![image-2.png](./image-2.png)
+![image-2.png](./img/image-2.png)
 
 now, we have to create one topic. this topic is the "bucket" to where the messages will be sent, from where they can be listened, but eventually (or not, depending on the retaining policy config you set) it will be emptied.
 
@@ -116,13 +116,13 @@ $ ./bin/kafka-console-producer.sh \
 
 no secrets about these parameters. the terminal will keep busy because it will be waiting for your input (or be, the streaming messages):
 
-![image-4.png](./image-4.png)
+![image-4.png](./img/image-4.png)
 
 so you can start typing! as long you type new messages on producer terminal, they will automatically be stored on the cats topic and appear on consumer terminal.
 
-![image-5.png](./image-5.png)
+![image-5.png](./img/image-5.png)
 
-![image-6.png](./image-6.png)
+![image-6.png](./img/image-6.png)
 
 # Fast overview
 
@@ -134,4 +134,4 @@ to have access to Kafdrop interface
 
 have fun with it! find the *cats* topic, click at the gray *view messages* button, select partition 0 (since we only have this one) and click at the blue *view messages* button: 
 
-![image-7.png](./image-7.png)    
+![image-7.png](./img/image-7.png)    
