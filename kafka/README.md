@@ -8,7 +8,7 @@
 # prerequisites 
 - Docker
 
-
+:mega::mega::mega::mega::mega::mega: open docker-compose.yml file while you read the explanations :mega::mega::mega::mega::mega::mega:
 # about our configs (yml)
 ### ports
   the ports statement exposes the container’s port xxxx on the host’s port yyyy (example):
