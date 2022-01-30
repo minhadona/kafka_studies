@@ -84,7 +84,7 @@ $ ./bin/kafka-topics.sh  --create --bootstrap-server localhost:9093 --topic cats
 
 ## Are you listening ?
 
-now we set an ear to LIVE listen the messages, before screaming out loud. from this same terminal, enter the command 
+now we set an ear to LIVE listen the messages, before screaming out loud. from this same terminal, enter the command
 ```
 $ ./bin/kafka-console-consumer.sh \
     --bootstrap-server localhost:9093 \
@@ -92,7 +92,17 @@ $ ./bin/kafka-console-consumer.sh \
     --from-beginning
 ```
 
-a total silence takes over the room. the terminal will keep busy, no response means you **got it**. keep the window aside, waiting, and move to the other terminal, where the container bash is still standing after that other *docker run* command.
+it also uses one of the native scripts to listen to topics. same rule about the bootstrap-server parameter applies to this script calling. the last parameter is about the messages offset. it refers to the choice of listening the messages from the beginning or from a specific index.
+
+a total silence takes over the room. the terminal will keep busy, no response means you **got it**. keep the window aside, waiting, and move to the other terminal, where the container bash is still standing after that *docker run* command.
 
 ## Raise your voice
 
+one topic to hold the messages, a consumer to hear them. now, we can sail some cat names. to produce messages we can also use a native kafka script. 
+```
+bin/kafka-console-producer.sh \
+    --broker-list localhost:9093 \
+    --topic cats
+```
+
+ffff
