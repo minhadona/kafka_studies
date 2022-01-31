@@ -1,4 +1,4 @@
-# simple studies - kafka
+# kafka demonstration - level 1 
 
 # environment composition:
 - [x] 1 Kafka broker
@@ -8,7 +8,7 @@
 # prerequisites 
 - Docker
 
-:mega: :mega: :mega: :mega: :mega: :mega: open docker-compose.yml file while you read the explanations :mega: :mega: :mega: :mega: :mega: :mega:
+:mega: :mega: :mega: :mega: :mega: :mega: open docker-compose.yml file while reading the explanations :mega: :mega: :mega: :mega: :mega: :mega:
 # about our configs (yml)
 ### ports
   the ports statement exposes the container’s port xxxx on the host’s port yyyy (example):
@@ -135,3 +135,4 @@ to have access to Kafdrop interface
 have fun with it! find the *cats* topic, click at the gray *view messages* button, select partition 0 (since we only have this one) and click at the blue *view messages* button: 
 
 ![image-7.png](./img/image-7.png)    
+
