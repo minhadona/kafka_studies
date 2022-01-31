@@ -27,7 +27,7 @@
   ```
     - KAFKA_ADVERTISED_LISTENERS= CLIENT://kafka-server:9092,EXTERNAL://localhost:9093
    ```
-  *Describes how the host name that is advertised can be reached by clients. The value is published to ZooKeeper for clients to use. PLAINTEXT means Un-authenticated, non-encrypted channel. Other valid protocol values can be found [here](https://kafka.apache.org/11/javadoc/org/apache/kafka/common/security/auth/SecurityProtocol.html).*
+  *Describes how the host name that is advertised can be reached by clients. The value is published to ZooKeeper for clients to use. PLAINTEXT means Un-authenticated, non-encrypted channel. Other valid protocols can be found [here](https://kafka.apache.org/11/javadoc/org/apache/kafka/common/security/auth/SecurityProtocol.html).*
   ```
     - KAFKA_ZOOKEEPER_CONNECT= zookeeper-server:2181
     - KAFKA_INTER_BROKER_LISTENER_NAME=CLIENT
