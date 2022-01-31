@@ -1,5 +1,13 @@
 # kafka demonstration - level 1 
 
+in this tutorial, we'll reproduce the following structure:
+
+![image-2.png](./img/Untitled-2022-01-31-1419.png)
+
+if you're not familiar with the initial concepts of Kafka, I recommend two materials:
+- [this very cute visual guide to understand the power of Kafka](https://www.gentlydownthe.stream/)
+- [this didactic medium article by Timothy Stepro](https://timothystepro.medium.com/visualizing-kafka-20bc384803e7)
+
 # environment composition:
 - [x] 1 Kafka broker
 - [x] 1 Zookeeper server
